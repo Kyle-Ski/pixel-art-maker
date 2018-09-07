@@ -153,12 +153,10 @@ YellowGreen */
 }
 
 .row {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E5E5;
-    width: 10px;
-    height: 10px;
+    display: table-row;
 }
-.grid-square{
+.col{
+    display: table-cell;
     background-color: #FFFFFF;
     border: 1px solid #E5E5E5;
     width: 10px;

@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
     // create canvas
     container.append(canvas)
     canvas.classList.add('canvas')
-    canvas.append(rowsInput, colInput)
-    canvas.append(submit)
+    container.prepend(rowsInput, colInput)
+    container.prepend(submit)
     submit.classList.add('buttn')
     submit.innerText = 'Submit'
     rowsInput.type = 'text'
@@ -20,24 +20,31 @@ document.addEventListener('DOMContentLoaded', function(){
     rowsInput.placeholder = 'How many rows?'
     colInput.placeholder = 'How many columns?'
     
+    
     // create color pallet
-    container.append(colorPallet)
+    container.prepend(colorPallet)
     colorPallet.type = 'color'
     submit.addEventListener('click', function(){
-        //function generateGrid(rows, cols){
-            var rows = rowsInput.value
-            var columns = colInput.value
-            for (var i = 0; i < rows; i++){
-                var row = document.createElement('div')
-                row.className = 'row'
-                // for(var j = 1; j <= rows; j++){
-                //     var cell = document.createElement('div')
-                //     cell.className = 'grid-square'
-                //     row.append(cell)
-                // }
-                canvas.append(row)
-                console.log('i clicked')
+        var rows = rowsInput.value
+        var columns = colInput.value
+        //set defalut for rows if the rows is zero
+       
+        console.log(col)
+        for (var i = 0; i < rows; i++){
+            var row = document.createElement('div')
+            row.className = 'row'
+            // row.innerText = i
+            canvas.append(row)
+            for (let index = 0; index < columns; index++) {
+                var col = document.createElement('div')
+                col.className = 'col'
+                row.append(col)
+
+
             }
-        //}    
+        }
+        // if(document.getElementsByClassName('col')){
+        //     canvas.removeChild()
+        // }
     })
 })
