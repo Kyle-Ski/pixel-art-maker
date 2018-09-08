@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var container = document.createElement ('div')
     var body = document.querySelector('body')
     var colorPallet = document.createElement('input')
+    colorPallet.classList.add('color-pallet')
     var canvas = document.createElement('div')  
     var rowsInput = document.createElement('input')
     var colInput = document.createElement('input')
@@ -20,16 +21,14 @@ document.addEventListener('DOMContentLoaded', function(){
     rowsInput.placeholder = 'How many rows?'
     colInput.placeholder = 'How many columns?'
     
-    
     // create color pallet
     container.prepend(colorPallet)
     colorPallet.type = 'color'
     submit.addEventListener('click', function(){
-        var rows = rowsInput.value
-        var columns = colInput.value
+        var rows = 10/*rowsInput.value*/
+        var columns = 10/*colInput.value*/
         //set defalut for rows if the rows is zero
        
-        console.log(col)
         for (var i = 0; i < rows; i++){
             var row = document.createElement('div')
             row.className = 'row'
@@ -39,12 +38,21 @@ document.addEventListener('DOMContentLoaded', function(){
                 var col = document.createElement('div')
                 col.className = 'col'
                 row.append(col)
-
-
+                
+                col.addEventListener('click', function(e){
+                    var currentColor = colorPallet.value
+                    col.classList.add('colored')
+                    e.target.style.backgroundColor = currentColor
+        
+                    console.log(currentColor)
+                })  
             }
         }
+        
         // if(document.getElementsByClassName('col')){
         //     canvas.removeChild()
         // }
+       
     })
+    
 })
