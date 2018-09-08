@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function(){
     container.prepend(colorPallet)
     colorPallet.type = 'color'
     submit.addEventListener('click', function(){
-        var rows = 10/*rowsInput.value*/
-        var columns = 10/*colInput.value*/
+        var rows = rowsInput.value
+        var columns = colInput.value
         //set defalut for rows if the rows is zero
        
         for (var i = 0; i < rows; i++){
