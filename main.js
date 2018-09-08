@@ -9,21 +9,19 @@ document.addEventListener('DOMContentLoaded', function(){
     var colInput = document.createElement('input')
     var submit = document.createElement('button')
     body.appendChild(container).classList.add('container')
-    // create canvas
     container.append(canvas)
     canvas.classList.add('canvas')
     container.prepend(rowsInput, colInput)
     rowsInput.classList.add('row-input')
     colInput.classList.add('col-input')
     container.prepend(submit)
-    submit.classList.add('buttn')
+    submit.classList.add('buttn')   
     submit.innerText = 'Submit'
     rowsInput.type = 'text'
     colInput.type = 'text'
     rowsInput.placeholder = 'How many rows?'
     colInput.placeholder = 'How many columns?'
     
-    // create color pallet
     container.prepend(colorPallet)
     colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function(){
         for (var i = 0; i < rows; i++){
             var row = document.createElement('div')
             row.className = 'row'
-            // row.innerText = i
             canvas.append(row)
             for (let index = 0; index < columns; index++) {
                 var col = document.createElement('div')
