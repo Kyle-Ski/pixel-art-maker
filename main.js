@@ -44,7 +44,13 @@ document.addEventListener('DOMContentLoaded', function(){
                     col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
                     console.log(currentColor)
-                })  
+                }) 
+                // col.addEventListener('mouseenter',function(e){
+                //     var currentColor = colorPallet.value
+                //     col.classList.add('colored')
+                //     e.target.style.backgroundColor = currentColor
+                //     console.log(currentColor) 
+                // }) 
             }
         }
         
