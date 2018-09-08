@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
     container.append(canvas)
     canvas.classList.add('canvas')
     container.prepend(rowsInput, colInput)
+    rowsInput.classList.add('row-input')
+    colInput.classList.add('col-input')
     container.prepend(submit)
     submit.classList.add('buttn')
     submit.innerText = 'Submit'
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // create color pallet
     container.prepend(colorPallet)
+    colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
     submit.addEventListener('click', function(){
         var rows = rowsInput.value
@@ -39,11 +42,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 col.className = 'col'
                 row.append(col)
                 
-                col.addEventListener('click', function(e){
+                col.addEventListener('mousedown', function(e){
                     var currentColor = colorPallet.value
                     col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
-        
                     console.log(currentColor)
                 })  
             }
