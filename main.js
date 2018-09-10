@@ -49,10 +49,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 
                 col.addEventListener('mousedown', function(e){
                     var currentColor = colorPallet.value
-                    // col.classList.add('colored')
+                    col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
                     console.log(currentColor)
                 }) 
+            
                 // col.addEventListener('mouseenter',function(e){
                 //     var currentColor = colorPallet.value
                 //     col.classList.add('colored')
@@ -65,12 +66,18 @@ document.addEventListener('DOMContentLoaded', function(){
         // if(document.getElementsByClassName('col')){
         //     canvas.removeChild()
         // }
-       
+        clear.addEventListener('click', function(){
+            var clearCols = document.querySelector('div.col')
+            if (clearCols.style.backgroundColor === colorPallet.value){
+                clearCols.addEventListener('mousedown', function(e){
+                    console.log('clear clicked')
+                    e.target.style.backgroundColor = '#FFFFFF'        
+                }) 
+            }
+            
+    
+        })
+    
     })
-    // clear.addEventListener('click', function(){
-    //     col.addEventListener('mousedown', function(e){
-    //         e.target.style.backgroundColor = '#FFFFFF'
-    //     }) 
 
-    // })
 })
