@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function(){
     var rowsInput = document.createElement('input')
     var colInput = document.createElement('input')
     var submit = document.createElement('button')
+    var clear = document.createElement('button')
+
     body.appendChild(container).classList.add('container')
     container.append(canvas)
     canvas.classList.add('canvas')
@@ -15,8 +17,12 @@ document.addEventListener('DOMContentLoaded', function(){
     rowsInput.classList.add('row-input')
     colInput.classList.add('col-input')
     container.prepend(submit)
+    container.prepend(clear)
     submit.classList.add('buttn')   
     submit.innerText = 'Submit'
+    clear.classList.add('buttn')   
+    clear.innerText = 'Clear'
+
     rowsInput.type = 'text'
     colInput.type = 'text'
     rowsInput.placeholder = 'How many rows?'
@@ -26,10 +32,12 @@ document.addEventListener('DOMContentLoaded', function(){
     colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
     submit.addEventListener('click', function(){
-        var rows = rowsInput.value
-        var columns = colInput.value
+       // if (colInput.value)
+       //chaeck if the input is the same as before
         //set defalut for rows if the rows is zero
-       
+        var rows = rowsInput.value
+        var columns = colInput.value        
+
         for (var i = 0; i < rows; i++){
             var row = document.createElement('div')
             row.className = 'row'
@@ -41,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 
                 col.addEventListener('mousedown', function(e){
                     var currentColor = colorPallet.value
-                    col.classList.add('colored')
+                    // col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
                     console.log(currentColor)
                 }) 
@@ -59,5 +67,10 @@ document.addEventListener('DOMContentLoaded', function(){
         // }
        
     })
-    
+    // clear.addEventListener('click', function(){
+    //     col.addEventListener('mousedown', function(e){
+    //         e.target.style.backgroundColor = '#FFFFFF'
+    //     }) 
+
+    // })
 })
