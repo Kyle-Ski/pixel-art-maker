@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
     container.prepend(submit)
     container.prepend(clear)
     submit.classList.add('buttn')   
-    submit.innerText = 'Submit'
+    submit.innerText = 'Create Grid'
     clear.classList.add('buttn')   
     clear.innerText = 'Clear'
 
