@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 col.className = 'col'
                 row.append(col)
                 
-                col.addEventListener('mousedown', function(e){
+                col.addEventListener('click', function(e){
                     var currentColor = colorPallet.value
                     col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
@@ -58,15 +58,11 @@ document.addEventListener('DOMContentLoaded', function(){
             for (let i = 0; i < clearCols.length; i++){
                 if (clearCols[i].style.backgroundColor !== '#FFFFFF'){
                     clearCols[i].style.backgroundColor = '#FFFFFF'        
-                }
-    
+                }   
             }
-            
-    
         })
     
     })
-
 })
 
             
