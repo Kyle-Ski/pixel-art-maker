@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-    // create box to hold everything
     var container = document.createElement ('div')
     var body = document.querySelector('body')
     var colorPallet = document.createElement('input')
@@ -31,10 +30,8 @@ document.addEventListener('DOMContentLoaded', function(){
     container.prepend(colorPallet)
     colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
+    colorPallet.value = '#FF0000'
     submit.addEventListener('click', function(){
-       // if (colInput.value)
-       //chaeck if the input is the same as before
-        //set defalut for rows if the rows is zero
         var rows = rowsInput.value
         var columns = colInput.value        
 
@@ -51,28 +48,18 @@ document.addEventListener('DOMContentLoaded', function(){
                     var currentColor = colorPallet.value
                     col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
-                    console.log(currentColor)
                 }) 
             
-                // col.addEventListener('mouseenter',function(e){
-                //     var currentColor = colorPallet.value
-                //     col.classList.add('colored')
-                //     e.target.style.backgroundColor = currentColor
-                //     console.log(currentColor) 
-                // }) 
+                
             }
         }
-        
-        // if(document.getElementsByClassName('col')){
-        //     canvas.removeChild()
-        // }
         clear.addEventListener('click', function(){
-            var clearCols = document.querySelector('div.col')
-            if (clearCols.style.backgroundColor === colorPallet.value){
-                clearCols.addEventListener('mousedown', function(e){
-                    console.log('clear clicked')
-                    e.target.style.backgroundColor = '#FFFFFF'        
-                }) 
+            var clearCols = document.querySelectorAll('div.col')
+            for (let i = 0; i < clearCols.length; i++){
+                if (clearCols[i].style.backgroundColor !== '#FFFFFF'){
+                    clearCols[i].style.backgroundColor = '#FFFFFF'        
+                }
+    
             }
             
     
@@ -81,3 +68,6 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 })
+
+            
+    
