@@ -34,17 +34,21 @@ document.addEventListener('DOMContentLoaded', function(){
     
     function createGrid(){
         let rows = rowsInput.value
-        let columns = colInput.value        
-        for (let i = 0; i < rows; i++){
-            let row = document.createElement('div')
-            row.className = 'row'
-            canvas.append(row)
-            for (let index = 0; index < columns; index++) {
-                let col = document.createElement('div')
-                col.className = 'col'
-                row.append(col)
-            }
-        }
+        let columns = colInput.value  
+        if (columns > 100){
+            alert("Please choose columns less than 100")
+        } else{
+            for (let i = 0; i < rows; i++){
+                let row = document.createElement('div')
+                row.className = 'row'
+                canvas.append(row)
+                for (let index = 0; index < columns; index++) {
+                    let col = document.createElement('div')
+                    col.className = 'col'
+                    row.append(col)
+                }
+            }    
+        }    
     }
     
     function colorGrid(e){
