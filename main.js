@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function createGrid(){
         let rows = rowsInput.value
         let columns = colInput.value        
-    
         for (let i = 0; i < rows; i++){
             let row = document.createElement('div')
             row.className = 'row'
