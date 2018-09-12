@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
-    var container = document.createElement ('div')
-    var body = document.querySelector('body')
-    var colorPallet = document.createElement('input')
+    const container = document.createElement ('div')
+    const body = document.querySelector('body')
+    const colorPallet = document.createElement('input')
     colorPallet.classList.add('color-pallet')
-    var canvas = document.createElement('div')  
-    var rowsInput = document.createElement('input')
-    var colInput = document.createElement('input')
-    var submit = document.createElement('button')
-    var clear = document.createElement('button')
+    const canvas = document.createElement('div')  
+    const rowsInput = document.createElement('input')
+    const colInput = document.createElement('input')
+    const submit = document.createElement('button')
+    const clear = document.createElement('button')
 
     body.appendChild(container).classList.add('container')
     container.append(canvas)
@@ -31,38 +31,38 @@ document.addEventListener('DOMContentLoaded', function(){
     colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
     colorPallet.value = '#FF0000'
-    submit.addEventListener('click', function(){
-        var rows = rowsInput.value
-        var columns = colInput.value        
-
-        for (var i = 0; i < rows; i++){
-            var row = document.createElement('div')
+    
+    function createGrid(){
+        let rows = rowsInput.value
+        let columns = colInput.value        
+    
+        for (let i = 0; i < rows; i++){
+            let row = document.createElement('div')
             row.className = 'row'
             canvas.append(row)
             for (let index = 0; index < columns; index++) {
-                var col = document.createElement('div')
+                let col = document.createElement('div')
                 col.className = 'col'
                 row.append(col)
-                
                 canvas.addEventListener('click', function(e){
-                    var currentColor = colorPallet.value
+                    let currentColor = colorPallet.value
                     col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
                 }) 
-            
-                
             }
         }
+
         clear.addEventListener('click', function(){
-            var clearCols = document.querySelectorAll('div.col')
+            let clearCols = document.querySelectorAll('div.col')
             for (let i = 0; i < clearCols.length; i++){
                 if (clearCols[i].style.backgroundColor !== '#FFFFFF'){
                     clearCols[i].style.backgroundColor = '#FFFFFF'        
                 }   
             }
         })
-    
-    })
+    }
+
+    submit.addEventListener('click', createGrid)
 })
 
             
