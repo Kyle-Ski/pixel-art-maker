@@ -44,23 +44,26 @@ document.addEventListener('DOMContentLoaded', function(){
                 let col = document.createElement('div')
                 col.className = 'col'
                 row.append(col)
-                canvas.addEventListener('click', function(e){
-                    let currentColor = colorPallet.value
-                    e.target.style.backgroundColor = currentColor
-                }) 
             }
         }
-
-        clear.addEventListener('click', function(){
-            let clearCols = document.querySelectorAll('div.col')
-            for (let i = 0; i < clearCols.length; i++){
-                if (clearCols[i].style.backgroundColor !== '#FFFFFF'){
-                    clearCols[i].style.backgroundColor = '#FFFFFF'        
-                }   
-            }
-        })
+    }
+    
+    function colorGrid(e){
+        let currentColor = colorPallet.value
+        e.target.style.backgroundColor = currentColor
     }
 
+    function clearGrid(){
+        let clearCols = document.querySelectorAll('div.col')
+        for (let i = 0; i < clearCols.length; i++){
+            if (clearCols[i].style.backgroundColor !== '#FFFFFF'){
+                clearCols[i].style.backgroundColor = '#FFFFFF'        
+            }   
+        }
+    }
+
+    clear.addEventListener('click', clearGrid)
+    canvas.addEventListener('click', colorGrid) 
     submit.addEventListener('click', createGrid)
 })
 
