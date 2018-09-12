@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const colInput = document.createElement('input')
     const submit = document.createElement('button')
     const clear = document.createElement('button')
-
+    const chooseColor = document.createElement('span')
+    chooseColor.innerText = 'Choose your color!'
     body.appendChild(container).classList.add('container')
     container.append(canvas)
     canvas.classList.add('canvas')
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
     colInput.placeholder = 'How many columns?'
     
     container.prepend(colorPallet)
+    container.before(chooseColor)
     colorPallet.classList.add('color-pallet')
     colorPallet.type = 'color'
     colorPallet.value = '#FF0000'
