@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 row.append(col)
                 canvas.addEventListener('click', function(e){
                     let currentColor = colorPallet.value
-                    col.classList.add('colored')
                     e.target.style.backgroundColor = currentColor
                 }) 
             }
