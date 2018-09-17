@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
     container.append(canvas)
     canvas.classList.add('canvas')
     container.prepend(rowsInput, colInput)
-    rowsInput.classList.add('row-input')
-    colInput.classList.add('col-input')
+    rowsInput.classList.add('input')
+    colInput.classList.add('input')
     container.prepend(submit)
     container.prepend(clear)
     submit.classList.add('buttn')   
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let rows = rowsInput.value
         let columns = colInput.value  
         if (columns > 100){
-            alert("Please choose columns less than 100")
+            alert('Please choose columns less than 100')
         } else{
             for (let i = 0; i < rows; i++){
                 let row = document.createElement('div')
